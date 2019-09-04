@@ -35,14 +35,14 @@ class Stripes extends Component {
 				key={i}
 				show={true}
 				start={{
-					backgroundColor: 'white',
+					background: '#ffffff',
 					opacity: 0,
 					left: 0,
 					rotate: 0,
 					top: 0,
 				}}
 				enter={{
-					backgroundColor: stripe.background,
+					background: stripe.background,
 					opacity: [ 1 ],
 					left: [ stripe.left ],
 					rotate: [ stripe.rotate ],
@@ -50,17 +50,17 @@ class Stripes extends Component {
 					timing: { delay: stripe.delay, duration: 200, ease: easePolyOut },
 					events: {
 						end() {
-							console.log('animation finished');
+							// console.log('animation finished')
 						},
 					},
 				}}
 			>
-				{({ opacity, left, rotate, top, backgroundColor }) => {
+				{({ opacity, left, rotate, top, background }) => {
 					return (
 						<div
 							className="stripe"
 							style={{
-								backgroundColor,
+								background,
 								opacity,
 								transform: `rotate(${rotate}deg) translate(${left}px,${top}px)`,
 							}}
